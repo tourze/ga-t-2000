@@ -1,25 +1,37 @@
-# GA/T 2000 公安信息代码
+# GA/T 2000 Public Security Information Code
 
-[English](#english) | [中文](#中文)
+[![Latest Version](https://img.shields.io/packagist/v/tourze/ga-t-2000.svg?style=flat-square)](https://packagist.org/packages/tourze/ga-t-2000)
+[![Total Downloads](https://img.shields.io/packagist/dt/tourze/ga-t-2000.svg?style=flat-square)](https://packagist.org/packages/tourze/ga-t-2000)
+[![License](https://img.shields.io/packagist/l/tourze/ga-t-2000.svg?style=flat-square)](https://packagist.org/packages/tourze/ga-t-2000)
 
-## English
+[English](README.md) | [中文](README.zh-CN.md)
 
-A PHP package for GA/T 2000 (Public Security Information Code) standards, providing enums and constants for various public security related codes.
+A PHP package that implements GA/T 2000 (Public Security Information Code) standards, providing type-safe enums for various public security related codes.
 
-### Features
+## Features
 
-- Complete implementation of document type codes (GA/T 2000.156-2016)
-- Type-safe PHP 8.1+ enums
-- Support for labels and remarks
-- Easy to use in forms and data validation
+- Complete implementation of GA/T 2000.156-2016 document type codes
+- Type-safe PHP 8.1+ enums with strict typing
+- Comprehensive Chinese labels for all codes
+- Additional remarks for special document types
+- Easy integration with forms and data validation
+- PSR-4 compliant autoloading
+- Zero dependencies except PHP 8.1+
 
-### Installation
+## Installation
+
+You can install the package via composer:
 
 ```bash
 composer require tourze/ga-t-2000
 ```
 
-### Usage
+## Requirements
+
+- PHP 8.1 or higher
+- Composer for dependency management
+
+## Quick Start
 
 ```php
 use Tourze\GAT2000\DocumentType;
@@ -27,57 +39,30 @@ use Tourze\GAT2000\DocumentType;
 // Get document type code
 $code = DocumentType::ID_CARD->value; // '111'
 
-// Get document type label
+// Get document type label in Chinese
 $label = DocumentType::ID_CARD->getLabel(); // '身份证'
 
-// Get document type remark (if any)
+// Get document type remark (if available)
 $remark = DocumentType::TEMP_ENTRY_EXIT_CARD->getRemark(); // '临时出入内部单位证'
 
 // Get all document types as array
 $types = DocumentType::items(); // ['111' => '身份证', '112' => '临时身份证', ...]
 ```
 
-### Requirements
+## Available Document Types
 
-- PHP 8.1 or higher
-- tourze/enum-extra package
+The package includes all standard document types defined in GA/T 2000.156-2016, including but not limited to:
 
-## 中文
+- Identity documents (ID cards, passports, etc.)
+- Professional certificates (police, judge, lawyer cards, etc.)
+- Border control documents
+- Special permits and licenses
+- Organization and business documents
 
-GA/T 2000（公安信息代码）标准的 PHP 包，提供各种公安相关代码的枚举和常量。
+## Contributing
 
-### 特性
+Please see [CONTRIBUTING.md](CONTRIBUTING.md) for details.
 
-- 完整的证件类型代码实现（GA/T 2000.156-2016）
-- 类型安全的 PHP 8.1+ 枚举
-- 支持标签和备注
-- 易于在表单和数据验证中使用
+## License
 
-### 安装
-
-```bash
-composer require tourze/ga-t-2000
-```
-
-### 使用示例
-
-```php
-use Tourze\GAT2000\DocumentType;
-
-// 获取证件类型代码
-$code = DocumentType::ID_CARD->value; // '111'
-
-// 获取证件类型标签
-$label = DocumentType::ID_CARD->getLabel(); // '身份证'
-
-// 获取证件类型备注（如果有）
-$remark = DocumentType::TEMP_ENTRY_EXIT_CARD->getRemark(); // '临时出入内部单位证'
-
-// 获取所有证件类型数组
-$types = DocumentType::items(); // ['111' => '身份证', '112' => '临时身份证', ...]
-```
-
-### 系统要求
-
-- PHP 8.1 或更高版本
-- tourze/enum-extra 包
+The MIT License (MIT). Please see [License File](LICENSE) for more information.
