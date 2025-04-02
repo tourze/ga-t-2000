@@ -6,7 +6,7 @@
 
 [English](README.md) | [中文](README.zh-CN.md)
 
-A PHP package that implements GA/T 2000 (Public Security Information Code) standards, providing type-safe enums for various public security related codes.
+A PHP package that implements GA/T 2000 (Public Security Information Code) standards, providing type-safe enums for various document related codes.
 
 ## Features
 

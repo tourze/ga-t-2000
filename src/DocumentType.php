@@ -10,8 +10,6 @@ use Tourze\EnumExtra\SelectTrait;
 
 /**
  * 身份证件类型
- *
- * TODO GAT 2000.156-2016 公安信息代码第156部分：常用证件代码.pdf 太多了
  */
 enum DocumentType: string implements Labelable, Itemable, Selectable
 {
