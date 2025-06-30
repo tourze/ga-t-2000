@@ -54,7 +54,6 @@ class DocumentTypeTest extends TestCase
     {
         foreach (DocumentType::cases() as $case) {
             $label = $case->getLabel();
-            $this->assertIsString($label);
             $this->assertNotEmpty($label);
         }
     }
@@ -162,7 +161,6 @@ class DocumentTypeTest extends TestCase
         $options = DocumentType::genOptions();
 
         // 验证生成的选项数组结构正确
-        $this->assertIsArray($options);
         $this->assertNotEmpty($options);
 
         // 验证第一个选项是否正确
