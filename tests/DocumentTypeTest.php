@@ -1,14 +1,20 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Tourze\GAT2000\Tests;
 
-use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Attributes\CoversClass;
 use Tourze\GAT2000\DocumentType;
+use Tourze\PHPUnitEnum\AbstractEnumTestCase;
 
 /**
  * DocumentType 枚举的单元测试
+ *
+ * @internal
  */
-class DocumentTypeTest extends TestCase
+#[CoversClass(DocumentType::class)]
+final class DocumentTypeTest extends AbstractEnumTestCase
 {
     /**
      * 测试枚举值可以被正确初始化
@@ -99,21 +105,6 @@ class DocumentTypeTest extends TestCase
 
         // 测试不存在的值，应返回 null
         $this->assertNull(DocumentType::tryFrom('999'));
-    }
-
-    /**
-     * 测试从 ItemTrait 继承的 toSelectItem 方法
-     */
-    public function testToSelectItem(): void
-    {
-        $expectedItem = [
-            'label' => '身份证',
-            'text' => '身份证',
-            'value' => '111',
-            'name' => '身份证',
-        ];
-
-        $this->assertEquals($expectedItem, DocumentType::ID_CARD->toSelectItem());
     }
 
     /**

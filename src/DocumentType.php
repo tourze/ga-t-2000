@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Tourze\GAT2000;
 
 use Tourze\EnumExtra\Itemable;
